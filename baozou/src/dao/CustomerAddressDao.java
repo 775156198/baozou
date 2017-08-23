@@ -43,6 +43,29 @@ public class CustomerAddressDao extends Database{
 	
 	
 	/**
+	 * 分页查询所有用户地址信息（后台功能）
+	 * @param page_number 传入页码
+	 * @return 返回数据集合
+	 */
+	public List<CustomerAddressVo> getCustomerAddressByPage(int page_number){
+		String sql = "select * from customer_address_tb limit (?-1)*10,10";
+		List<CustomerAddressVo> list = this.executeQuery(sql, fillData,page_number );
+		return list;
+	}
+	
+	/**
+	 * 分页查询所有用户地址信息(用户功能)
+	 * @param page_number
+	 * @param customer_phone_number 用户手机号
+	 * @return
+	 */
+	public List<CustomerAddressVo> getCustomerAddressByPage(int page_number,String customer_id){
+		String sql = "select * from customer_address_tb limit where customer_phone_number=? (?-1)*10,10";
+		List<CustomerAddressVo> list = this.executeQuery(sql, fillData,customer_id,page_number);
+		return list;
+	}
+		
+	/**
 	 * 查询指定用户的地址信息
 	 * @param customer_phone_number 传入的用户电话号码
 	 * @return 返回list集合
