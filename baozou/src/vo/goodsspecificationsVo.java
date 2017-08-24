@@ -8,6 +8,7 @@ public class goodsspecificationsVo {
 	private String goods_color;//商品颜色
 	private int goods_number;//商品数量
 	private String goods_name;//商品名称
+
 	public goodsspecificationsVo(String specification_id, String goods_price, String goods_size, String goods_color,
 			int goods_number, String goods_name) {
 		super();
@@ -21,6 +22,7 @@ public class goodsspecificationsVo {
 	public goodsspecificationsVo() {
 		super();
 	}
+
 	public String getSpecification_id() {
 		return specification_id;
 	}
