@@ -102,7 +102,8 @@ public class GoodsDetailsDao extends Database{
 	 */
 	public int modifyGood(String goods_id){
 		String sql="update goods_details _tb favorable_quantity=? where goods_id";
-		fundF(goods_id);
+		goodsDetailsVo vo=fundF(goods_id);
+		int num=vo.getFavorable_quantity();
 	}
 	/**
 	 * 查询商品好评数量
