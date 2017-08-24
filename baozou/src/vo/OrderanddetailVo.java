@@ -3,19 +3,24 @@ package vo;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-public class OrderVo {
-	 private String order_id;
-	 private String customer_phone_number;
-	 private int number; //购买数量
-	 private String order_status;//订单状态
-	 private String payment_method;//支付方式
-	 private double total_price;//总额
-	 private int freight;//运费
-	 private Timestamp create_time;//订单创建时间
-	 private Timestamp pay_time;//支付时间
-	 private Timestamp delivery_time;//发货时间
-	 private Timestamp receipt_time;//收货时间
-	 private String address_id;//地址id
+public class OrderanddetailVo {
+	private String order_id;
+	private String customer_phone_number;
+	private int number; //购买数量
+	private String order_status;//订单状态
+	private String payment_method;//支付方式
+	private double total_price;//总额
+	private int freight;//运费
+	private Timestamp create_time;//订单创建时间
+	private Timestamp pay_time;//支付时间
+	private Timestamp delivery_time;//发货时间
+	private Timestamp receipt_time;//收货时间
+	private String address_id;//地址id
+	private String details_id;
+	private String goods_id;
+	private int goods_num;
+	private int isGoods;
+	private String status;
 	public String getOrder_id() {
 		return order_id;
 	}
@@ -88,9 +93,40 @@ public class OrderVo {
 	public void setAddress_id(String address_id) {
 		this.address_id = address_id;
 	}
-	public OrderVo(String order_id, String customer_phone_number, int number, String order_status,
+	public String getDetails_id() {
+		return details_id;
+	}
+	public void setDetails_id(String details_id) {
+		this.details_id = details_id;
+	}
+	public String getGoods_id() {
+		return goods_id;
+	}
+	public void setGoods_id(String goods_id) {
+		this.goods_id = goods_id;
+	}
+	public int getGoods_num() {
+		return goods_num;
+	}
+	public void setGoods_num(int goods_num) {
+		this.goods_num = goods_num;
+	}
+	public int getIsGoods() {
+		return isGoods;
+	}
+	public void setIsGoods(int isGoods) {
+		this.isGoods = isGoods;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public OrderanddetailVo(String order_id, String customer_phone_number, int number, String order_status,
 			String payment_method, double total_price, int freight, Timestamp create_time, Timestamp pay_time,
-			Timestamp delivery_time, Timestamp receipt_time, String address_id) {
+			Timestamp delivery_time, Timestamp receipt_time, String address_id, String details_id, String goods_id,
+			int goods_num, int isGoods, String status) {
 		super();
 		this.order_id = order_id;
 		this.customer_phone_number = customer_phone_number;
@@ -104,22 +140,25 @@ public class OrderVo {
 		this.delivery_time = delivery_time;
 		this.receipt_time = receipt_time;
 		this.address_id = address_id;
+		this.details_id = details_id;
+		this.goods_id = goods_id;
+		this.goods_num = goods_num;
+		this.isGoods = isGoods;
+		this.status = status;
 	}
-	public OrderVo() {
+	public OrderanddetailVo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
-		return "OrderVo [order_id=" + order_id + ", customer_phone_number=" + customer_phone_number + ", number="
-				+ number + ", order_status=" + order_status + ", payment_method=" + payment_method + ", total_price="
-				+ total_price + ", freight=" + freight + ", create_time=" + create_time + ", pay_time=" + pay_time
-				+ ", delivery_time=" + delivery_time + ", receipt_time=" + receipt_time + ", address_id=" + address_id
-				+ "]";
+		return "OrderanddetailVo [order_id=" + order_id + ", customer_phone_number=" + customer_phone_number
+				+ ", number=" + number + ", order_status=" + order_status + ", payment_method=" + payment_method
+				+ ", total_price=" + total_price + ", freight=" + freight + ", create_time=" + create_time
+				+ ", pay_time=" + pay_time + ", delivery_time=" + delivery_time + ", receipt_time=" + receipt_time
+				+ ", address_id=" + address_id + ", details_id=" + details_id + ", goods_id=" + goods_id
+				+ ", goods_num=" + goods_num + ", isGoods=" + isGoods + ", status=" + status + "]";
 	}
-
-	 
-	 
-	 
+	
 	
 }

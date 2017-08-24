@@ -1,11 +1,11 @@
 package vo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class CollectionVo {
 	private String customer_phone_number;
 	private String goods_id;
-	private Date collect_time;
+	private Timestamp collect_time;
 	private int number;
 	public String getCustomer_phone_number() {
 		return customer_phone_number;
@@ -19,10 +19,10 @@ public class CollectionVo {
 	public void setGoods_id(String goods_id) {
 		this.goods_id = goods_id;
 	}
-	public Date getCollect_time() {
+	public Timestamp getCollect_time() {
 		return collect_time;
 	}
-	public void setCollect_time(Date collect_time) {
+	public void setCollect_time(Timestamp collect_time) {
 		this.collect_time = collect_time;
 	}
 	public int getNumber() {
@@ -31,7 +31,7 @@ public class CollectionVo {
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	public CollectionVo(String customer_phone_number, String goods_id, Date collect_time, int number) {
+	public CollectionVo(String customer_phone_number, String goods_id, Timestamp collect_time, int number) {
 		super();
 		this.customer_phone_number = customer_phone_number;
 		this.goods_id = goods_id;
@@ -44,8 +44,9 @@ public class CollectionVo {
 	}
 	@Override
 	public String toString() {
-		return customer_phone_number + "\t" + goods_id
-				+ "\t" + collect_time + "\t" + number ;
+		return "CollectionVo [customer_phone_number=" + customer_phone_number + ", goods_id=" + goods_id
+				+ ", collect_time=" + collect_time + ", number=" + number + "]";
 	}
+	
 	
 }
