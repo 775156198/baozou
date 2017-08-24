@@ -1,5 +1,4 @@
-/database/
 /dao/
-/vo/
+/database/
 /myinterface/
-/controlle/
+/vo/
