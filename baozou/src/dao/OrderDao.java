@@ -54,13 +54,13 @@ public class OrderDao extends Database{
 	};
 	
 	/**
-	 * 分页查询 查询所有订单信息（卖家）
+	 * 分页查询 查询所有订单信息（卖家）时间优先
 	 * @param page
 	 * @return
 	 */
 	public List<OrderVo> getAllOrderInfo(int page){
 		page = (page-1)*10;
-		String sql = "select * from order_tb limit ?,10";
+		String sql = "select * from order_tb ORDER BY create_time desc limit ?,10";
 		List<OrderVo> list = this.executeQuery(sql, fillData,page);
 		return list;
 	}
@@ -70,7 +70,7 @@ public class OrderDao extends Database{
 	 * @return list<OrderVo>
 	 */
 	public List<OrderVo> getAllOrderInfo(){
-		String sql="select * from order_tb";
+		String sql="select * from order_tb ORDER BY create_time desc";
 		List<OrderVo> list = this.executeQuery(sql, fillData);
 		return list;
 	}
@@ -95,14 +95,13 @@ public class OrderDao extends Database{
 	 */
 
 	public List<OrderVo> getAllOrderInfoByCustomerPhone(String customer_phone_number){
-		String sql="select * from order_tb where customer_phone_number=?";
+		String sql="select * from order_tb where customer_phone_number=? ORDER BY create_time desc";
 		List<OrderVo> list = this.executeQuery(sql, fillData, customer_phone_number);
 		return list;
 	}
 	
 	/**
 	 * 添加订单
-	 * 
 	 * @param ov	新的订单实体类
 	 * @return
 	 * @throws SQLException
