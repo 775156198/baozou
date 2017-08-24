@@ -1,11 +1,11 @@
 package vo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class CollectiondetailVo {
 	private String customer_phone_number;
 	private String goods_id;
-	private Date collect_time;
+	private Timestamp collect_time;
 	private String goods_introduce;//鍟嗗搧璇︾粏浠嬬粛
 	private int favorable_quantity; //濂借瘎閲�
 	private int differential_quantity; //宸瘎閲�
@@ -26,10 +26,10 @@ public class CollectiondetailVo {
 	public void setGoods_id(String goods_id) {
 		this.goods_id = goods_id;
 	}
-	public Date getCollect_time() {
+	public Timestamp getCollect_time() {
 		return collect_time;
 	}
-	public void setCollect_time(Date collect_time) {
+	public void setCollect_time(Timestamp collect_time) {
 		this.collect_time = collect_time;
 	}
 	public String getGoods_introduce() {
@@ -80,7 +80,7 @@ public class CollectiondetailVo {
 	public void setImg_b(String img_b) {
 		this.img_b = img_b;
 	}
-	public CollectiondetailVo(String customer_phone_number, String goods_id, Date collect_time,
+	public CollectiondetailVo(String customer_phone_number, String goods_id, Timestamp collect_time,
 			String goods_introduce, int favorable_quantity, int differential_quantity, int collection_quantity,
 			int sales_volum, String img_s, String img_m, String img_b) {
 		super();
@@ -108,5 +108,6 @@ public class CollectiondetailVo {
 				+ collection_quantity + ", sales_volum=" + sales_volum + ", img_s=" + img_s + ", img_m=" + img_m
 				+ ", img_b=" + img_b + "]";
 	}
+	
 	
 }

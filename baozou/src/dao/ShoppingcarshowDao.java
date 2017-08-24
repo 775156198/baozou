@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class ShoppingcarshowDao extends Database{
 				}else if(key.equals("goods_id")){
 					vo.setGoods_id((String)value);
 				}else if(key.equals("time")){
-					vo.setTime((Date)value);
+					vo.setTime((Timestamp)value);
 				}else if(key.equals("goods_name")){
 					vo.setGoods_name((String)value);
 				}else if(key.equals("quality_id")){

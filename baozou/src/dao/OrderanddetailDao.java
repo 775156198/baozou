@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -34,13 +35,13 @@ public class OrderanddetailDao extends Database{
 				}else if(key.equals("freight")){
 					vo.setFreight((Integer)value);
 				}else if(key.equals("create_time")){
-					vo.setCreate_time((Date)value);
+					vo.setCreate_time((Timestamp)value);
 				}else if(key.equals("pay_time")){
-					vo.setPay_time((Date)value);
+					vo.setPay_time((Timestamp)value);
 				}else if(key.equals("delivery_time")){
-					vo.setDelivery_time((Date)value);
+					vo.setDelivery_time((Timestamp)value);
 				}else if(key.equals("receipt_time")){
-					vo.setReceipt_time((Date)value);
+					vo.setReceipt_time((Timestamp)value);
 				}else if(key.equals("address_id")){
 					vo.setAddress_id((String)value);
 				}else if(key.equals("details_id")){

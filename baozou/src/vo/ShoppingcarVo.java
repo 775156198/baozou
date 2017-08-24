@@ -1,11 +1,12 @@
 package vo;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class ShoppingcarVo {
 	private String customer_phone_number;
 	private String goods_id;//商品ID
-	private Date time;//时间
+	private Timestamp time;//时间
 	private String goods_name;
 	private String quality_id;
 	private String goods_color;
@@ -26,10 +27,10 @@ public class ShoppingcarVo {
 	public void setGoods_id(String goods_id) {
 		this.goods_id = goods_id;
 	}
-	public Date getTime() {
+	public Timestamp getTime() {
 		return time;
 	}
-	public void setTime(Date time) {
+	public void setTime(Timestamp time) {
 		this.time = time;
 	}
 	public String getGoods_name() {
@@ -80,8 +81,9 @@ public class ShoppingcarVo {
 	public void setIs_failure(int is_failure) {
 		this.is_failure = is_failure;
 	}
-	public ShoppingcarVo(String customer_phone_number, String goods_id, Date time, String goods_name, String quality_id,
-			String goods_color, String goods_size, int number, double goods_price, double total_price, int is_failure) {
+	public ShoppingcarVo(String customer_phone_number, String goods_id, Timestamp time, String goods_name,
+			String quality_id, String goods_color, String goods_size, int number, double goods_price,
+			double total_price, int is_failure) {
 		super();
 		this.customer_phone_number = customer_phone_number;
 		this.goods_id = goods_id;
