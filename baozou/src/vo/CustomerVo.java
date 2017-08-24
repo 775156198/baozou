@@ -10,8 +10,22 @@ public class CustomerVo {
 	private String idcard_number;
 	private int grade;
 	private Date regist_time;
-	private double total_price;
-	private int status;
+	private Date last_change_time;
+	public CustomerVo(String customer_phone_number, String password, int sex, String customer_name,
+			String idcard_number, int grade, Date regist_time, Date last_change_time) {
+		super();
+		this.customer_phone_number = customer_phone_number;
+		this.password = password;
+		this.sex = sex;
+		this.customer_name = customer_name;
+		this.idcard_number = idcard_number;
+		this.grade = grade;
+		this.regist_time = regist_time;
+		this.last_change_time = last_change_time;
+	}
+	public CustomerVo() {
+		super();
+	}
 	public String getCustomer_phone_number() {
 		return customer_phone_number;
 	}
@@ -54,41 +68,20 @@ public class CustomerVo {
 	public void setRegist_time(Date regist_time) {
 		this.regist_time = regist_time;
 	}
-	public double getTotal_price() {
-		return total_price;
+	public Date getLast_change_time() {
+		return last_change_time;
 	}
-	public void setTotal_price(double total_price) {
-		this.total_price = total_price;
-	}
-	public int getStatus() {
-		return status;
-	}
-	public void setStatus(int status) {
-		this.status = status;
-	}
-	public CustomerVo(String customer_phone_number, String password, int sex, String customer_name,
-			String idcard_number, int grade, Date regist_time, double total_price, int status) {
-		super();
-		this.customer_phone_number = customer_phone_number;
-		this.password = password;
-		this.sex = sex;
-		this.customer_name = customer_name;
-		this.idcard_number = idcard_number;
-		this.grade = grade;
-		this.regist_time = regist_time;
-		this.total_price = total_price;
-		this.status = status;
-	}
-	public CustomerVo() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setLast_change_time(Date last_change_time) {
+		this.last_change_time = last_change_time;
 	}
 	@Override
 	public String toString() {
 		return "CustomerVo [customer_phone_number=" + customer_phone_number + ", password=" + password + ", sex=" + sex
 				+ ", customer_name=" + customer_name + ", idcard_number=" + idcard_number + ", grade=" + grade
-				+ ", regist_time=" + regist_time + ", total_price=" + total_price + ", status=" + status + "]";
+				+ ", regist_time=" + regist_time + ", last_change_time=" + last_change_time + "]";
 	}
+	
+	
 	
 	
 }

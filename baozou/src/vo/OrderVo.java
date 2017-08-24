@@ -6,16 +6,16 @@ import java.sql.Timestamp;
 public class OrderVo {
 	 private String order_id;
 	 private String customer_phone_number;
-	 private int number; //¹ºÂòÊıÁ¿
-	 private String order_status;//¶©µ¥×´Ì¬
-	 private String payment_method;//Ö§¸¶·½Ê½
-	 private double total_price;//×Ü¶î
-	 private int freight;//ÔË·Ñ
-	 private Timestamp create_time;//¶©µ¥´´½¨Ê±¼ä
-	 private Timestamp pay_time;//Ö§¸¶Ê±¼ä
-	 private Timestamp delivery_time;//·¢»õÊ±¼ä
-	 private Timestamp receipt_time;//ÊÕ»õÊ±¼ä
-	 private String address_id;//µØÖ·id
+	 private int number; //è´­ä¹°æ•°é‡
+	 private String order_status;//è®¢å•çŠ¶æ€
+	 private String payment_method;//æ”¯ä»˜æ–¹å¼
+	 private double total_price;//æ€»é¢
+	 private int freight;//è¿è´¹
+	 private Timestamp create_time;//è®¢å•åˆ›å»ºæ—¶é—´
+	 private Timestamp pay_time;//æ”¯ä»˜æ—¶é—´
+	 private Timestamp delivery_time;//å‘è´§æ—¶é—´
+	 private Timestamp receipt_time;//æ”¶è´§æ—¶é—´
+	 private String address_id;//åœ°å€id
 	public String getOrder_id() {
 		return order_id;
 	}
