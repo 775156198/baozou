@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
@@ -24,7 +25,7 @@ public class CollectionDao extends Database{
 				}else if(key.equals("goods_id")){
 					vo.setGoods_id((String)value);
 				}else if(key.equals("collect_time")){
-					vo.setCollect_time((String)value);
+					vo.setCollect_time((Date)value);
 				}else if(key.equals("goods_introduce")){
 					vo.setGoods_introduce((String)value);
 				}else if(key.equals("favorable_quantity")){

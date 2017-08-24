@@ -1,10 +1,11 @@
 package vo;
 
+import java.sql.Date;
 
 public class ShoppingcardetailVo {
 	private String customer_phone_number;
 	private String goods_id;
-	private String time;
+	private Date time;
 	private String goods_name;
 	private String quality_id;
 	private String goods_color;
@@ -32,10 +33,10 @@ public class ShoppingcardetailVo {
 	public void setGoods_id(String goods_id) {
 		this.goods_id = goods_id;
 	}
-	public String getTime() {
+	public Date getTime() {
 		return time;
 	}
-	public void setTime(String time) {
+	public void setTime(Date time) {
 		this.time = time;
 	}
 	public String getGoods_name() {
@@ -128,7 +129,7 @@ public class ShoppingcardetailVo {
 	public void setImg_b(String img_b) {
 		this.img_b = img_b;
 	}
-	public ShoppingcardetailVo(String customer_phone_number, String goods_id, String time, String goods_name,
+	public ShoppingcardetailVo(String customer_phone_number, String goods_id, Date time, String goods_name,
 			String quality_id, String goods_color, String goods_size, int number, double goods_price,
 			double total_price, String goods_introduce, int favorable_quantity, int differential_quantity,
 			int collection_quantity, int sales_volum, String img_s, String img_m, String img_b) {

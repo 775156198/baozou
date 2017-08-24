@@ -1,7 +1,11 @@
 package vo;
 
+import java.sql.Date;
+
 public class ShoppingcarVo {
 	private String customer_phone_number;
+	private String goods_id;//商品ID
+	private Date time;//时间
 	private String goods_name;
 	private String quality_id;
 	private String goods_color;
@@ -15,6 +19,18 @@ public class ShoppingcarVo {
 	}
 	public void setCustomer_phone_number(String customer_phone_number) {
 		this.customer_phone_number = customer_phone_number;
+	}
+	public String getGoods_id() {
+		return goods_id;
+	}
+	public void setGoods_id(String goods_id) {
+		this.goods_id = goods_id;
+	}
+	public Date getTime() {
+		return time;
+	}
+	public void setTime(Date time) {
+		this.time = time;
 	}
 	public String getGoods_name() {
 		return goods_name;
@@ -64,10 +80,12 @@ public class ShoppingcarVo {
 	public void setIs_failure(int is_failure) {
 		this.is_failure = is_failure;
 	}
-	public ShoppingcarVo(String customer_phone_number, String goods_name, String quality_id, String goods_color,
-			String goods_size, int number, double goods_price, double total_price, int is_failure) {
+	public ShoppingcarVo(String customer_phone_number, String goods_id, Date time, String goods_name, String quality_id,
+			String goods_color, String goods_size, int number, double goods_price, double total_price, int is_failure) {
 		super();
 		this.customer_phone_number = customer_phone_number;
+		this.goods_id = goods_id;
+		this.time = time;
 		this.goods_name = goods_name;
 		this.quality_id = quality_id;
 		this.goods_color = goods_color;
@@ -83,10 +101,11 @@ public class ShoppingcarVo {
 	}
 	@Override
 	public String toString() {
-		return "ShoppingcarEntity [customer_phone_number=" + customer_phone_number + ", goods_name=" + goods_name
-				+ ", quality_id=" + quality_id + ", goods_color=" + goods_color + ", goods_size=" + goods_size
-				+ ", number=" + number + ", goods_price=" + goods_price + ", total_price=" + total_price
-				+ ", is_failure=" + is_failure + "]";
+		return "ShoppingcarVo [customer_phone_number=" + customer_phone_number + ", goods_id=" + goods_id + ", time="
+				+ time + ", goods_name=" + goods_name + ", quality_id=" + quality_id + ", goods_color=" + goods_color
+				+ ", goods_size=" + goods_size + ", number=" + number + ", goods_price=" + goods_price
+				+ ", total_price=" + total_price + ", is_failure=" + is_failure + "]";
 	}
+	
 	
 }

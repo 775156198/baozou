@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
@@ -24,7 +25,7 @@ public class ShoppingcarDao extends Database{
 				}else if(key.equals("goods_id")){
 					vo.setGoods_id((String)value);
 				}else if(key.equals("time")){
-					vo.setTime((String)value);
+					vo.setTime((Date)value);
 				}else if(key.equals("goods_name")){
 					vo.setGoods_name((String)value);
 				}else if(key.equals("quality_id")){

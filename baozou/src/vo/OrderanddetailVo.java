@@ -1,5 +1,7 @@
 package vo;
 
+import java.sql.Date;
+
 public class OrderanddetailVo {
 	private String order_id;
 	private String customer_phone_number;
@@ -8,10 +10,10 @@ public class OrderanddetailVo {
 	private String payment_method;//支付方式
 	private double total_price;//总额
 	private int freight;//运费
-	private String create_time;//订单创建时间
-	private String pay_time;//支付时间
-	private String delivery_time;//发货时间
-	private String receipt_time;//收货时间
+	private Date create_time;//订单创建时间
+	private Date pay_time;//支付时间
+	private Date delivery_time;//发货时间
+	private Date receipt_time;//收货时间
 	private String address_id;//地址id
 	private String details_id;
 	private String goods_id;
@@ -60,28 +62,28 @@ public class OrderanddetailVo {
 	public void setFreight(int freight) {
 		this.freight = freight;
 	}
-	public String getCreate_time() {
+	public Date getCreate_time() {
 		return create_time;
 	}
-	public void setCreate_time(String create_time) {
+	public void setCreate_time(Date create_time) {
 		this.create_time = create_time;
 	}
-	public String getPay_time() {
+	public Date getPay_time() {
 		return pay_time;
 	}
-	public void setPay_time(String pay_time) {
+	public void setPay_time(Date pay_time) {
 		this.pay_time = pay_time;
 	}
-	public String getDelivery_time() {
+	public Date getDelivery_time() {
 		return delivery_time;
 	}
-	public void setDelivery_time(String delivery_time) {
+	public void setDelivery_time(Date delivery_time) {
 		this.delivery_time = delivery_time;
 	}
-	public String getReceipt_time() {
+	public Date getReceipt_time() {
 		return receipt_time;
 	}
-	public void setReceipt_time(String receipt_time) {
+	public void setReceipt_time(Date receipt_time) {
 		this.receipt_time = receipt_time;
 	}
 	public String getAddress_id() {
@@ -121,8 +123,8 @@ public class OrderanddetailVo {
 		this.status = status;
 	}
 	public OrderanddetailVo(String order_id, String customer_phone_number, int number, String order_status,
-			String payment_method, double total_price, int freight, String create_time, String pay_time,
-			String delivery_time, String receipt_time, String address_id, String details_id, String goods_id,
+			String payment_method, double total_price, int freight, Date create_time, Date pay_time,
+			Date delivery_time, Date receipt_time, String address_id, String details_id, String goods_id,
 			int goods_num, int isGoods, String status) {
 		super();
 		this.order_id = order_id;

@@ -1,14 +1,16 @@
 package vo;
 
+import java.sql.Date;
+
 public class CollectiondetailVo {
 	private String customer_phone_number;
 	private String goods_id;
-	private String collect_time;
-	private String goods_introduce;//商品详细介绍
-	private int favorable_quantity; //好评量
-	private int differential_quantity; //差评量
-	private int collection_quantity;//收藏量
-	private int sales_volum;//销量
+	private Date collect_time;
+	private String goods_introduce;//鍟嗗搧璇︾粏浠嬬粛
+	private int favorable_quantity; //濂借瘎閲�
+	private int differential_quantity; //宸瘎閲�
+	private int collection_quantity;//鏀惰棌閲�
+	private int sales_volum;//閿�閲�
 	private String img_s;
 	private String img_m;
 	private String img_b;
@@ -24,10 +26,10 @@ public class CollectiondetailVo {
 	public void setGoods_id(String goods_id) {
 		this.goods_id = goods_id;
 	}
-	public String getCollect_time() {
+	public Date getCollect_time() {
 		return collect_time;
 	}
-	public void setCollect_time(String collect_time) {
+	public void setCollect_time(Date collect_time) {
 		this.collect_time = collect_time;
 	}
 	public String getGoods_introduce() {
@@ -78,7 +80,7 @@ public class CollectiondetailVo {
 	public void setImg_b(String img_b) {
 		this.img_b = img_b;
 	}
-	public CollectiondetailVo(String customer_phone_number, String goods_id, String collect_time,
+	public CollectiondetailVo(String customer_phone_number, String goods_id, Date collect_time,
 			String goods_introduce, int favorable_quantity, int differential_quantity, int collection_quantity,
 			int sales_volum, String img_s, String img_m, String img_b) {
 		super();

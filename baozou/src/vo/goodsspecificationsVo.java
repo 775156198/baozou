@@ -7,6 +7,7 @@ public class goodsspecificationsVo {
 	private String goods_size;//商品尺码
 	private String goods_color;//商品颜色
 	private int goods_number;//商品数量
+	private String goods_name;//商品名称
 	
 	public String getSpecification_id() {
 		return specification_id;
@@ -38,14 +39,21 @@ public class goodsspecificationsVo {
 	public void setGoods_number(int goods_number) {
 		this.goods_number = goods_number;
 	}
+	public String getGoods_name() {
+		return goods_name;
+	}
+	public void setGoods_name(String goods_name) {
+		this.goods_name = goods_name;
+	}
 	public goodsspecificationsVo(String specification_id, String goods_price, String goods_size, String goods_color,
-			int goods_number) {
+			int goods_number, String goods_name) {
 		super();
 		this.specification_id = specification_id;
 		this.goods_price = goods_price;
 		this.goods_size = goods_size;
 		this.goods_color = goods_color;
 		this.goods_number = goods_number;
+		this.goods_name = goods_name;
 	}
 	public goodsspecificationsVo() {
 		super();
@@ -53,9 +61,9 @@ public class goodsspecificationsVo {
 	}
 	@Override
 	public String toString() {
-		return  specification_id + "\t" + goods_price
-				+ "\t" + goods_size + "\t" + goods_color + "\t" + goods_number
-				;
+		return "goodsspecificationsVo [specification_id=" + specification_id + ", goods_price=" + goods_price
+				+ ", goods_size=" + goods_size + ", goods_color=" + goods_color + ", goods_number=" + goods_number
+				+ ", goods_name=" + goods_name + "]";
 	}
 	
 	
