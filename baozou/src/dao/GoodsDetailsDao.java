@@ -1,8 +1,11 @@
 package dao;
 
+import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import com.sun.org.apache.regexp.internal.recompile;
 
 import database.Database;
 import myinterface.FillData;
@@ -52,6 +55,66 @@ public class GoodsDetailsDao extends Database{
 		return executeQuery;
 	}
 	/**
-	 * 添加商品
+	 * 查询单个商品
 	 */
+	public goodsDetailsVo getGoodsDan(String goods_id){
+		String sql="select*from goods_details _tb  where goods_id=?";
+		List<goodsDetailsVo> executeQuery=this.executeQuery(sql, fillData,goods_id);
+		for(goodsDetailsVo vo:executeQuery){
+			this.close();
+			return vo;
+		}
+		this.close();
+		return null;
+	}
+	/**
+	 * 添加商品
+	 * @throws SQLException 
+	 */
+	public int addGoodsDetails(goodsDetailsVo vo) throws SQLException{
+		int row=0;
+		String sql="insert into goods_details _tb (goods_id,goods_introduce,img_s,img_m,img_b) values(?,?,?,?,?)";
+		try {
+			 row=this.executeUpdate(sql,vo.getGoods_id(),vo.getGoods_introduce(),vo.getImg_s(),vo.getImg_m(),vo.getImg_b());
+		} catch (SQLException e) {
+			throw new SQLException("添加有误");
+		}
+		this.close();
+		return row;
+	}
+	/**
+	 * 修改商品详情表
+	 * @throws SQLException 
+	 */
+	public int modifyGoodsDatails(String goods_introduce,String goods_id,String img_s,String img_m,String img_b) throws SQLException{
+		int rwo=0;
+		String sql="update goods_details _tb goods_introduce=?,img_s=?,img_m=?,img_b=? where goods_id=?";
+		try {
+			 rwo=this.executeUpdate(sql,goods_introduce,img_s,img_m,img_b,goods_id);
+		} catch (SQLException e) {
+			throw new SQLException("修改有误");
+		}
+		this.close();
+		return rwo;
+	}
+	/**
+	 * 修改商品好评数量
+	 */
+	public int modifyGood(String goods_id){
+		String sql="update goods_details _tb favorable_quantity=? where goods_id";
+		fundF(goods_id);
+	}
+	/**
+	 * 查询商品好评数量
+	 */
+	public goodsDetailsVo fundF(String goods_id){
+		String sql="select*from  goods_details _tb where goods_id=?";
+		List<goodsDetailsVo> executeQuery=this.executeQuery(sql, fillData,goods_id);
+		for(goodsDetailsVo vo:executeQuery){
+			this.close();
+			return vo;
+		}
+		this.close();
+		return null;
+	}
 }

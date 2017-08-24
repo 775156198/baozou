@@ -47,17 +47,20 @@ public class GoodsDao extends Database {
 		 * 添加商品
 		 * @throws SQLException 
 		 */
-		public int addGoods(goodsInfoVo gVo) throws SQLException{
+		public String addGoods(goodsInfoVo gVo) throws SQLException{
 			String sql="insert into goods_info_tb (goods_id,goods_name,goods_state,goods_category) values(?,?,?,?) ";
-			int row=0;
+			String id=null;
 			try {
-				     row=this.executeUpdate(sql, gVo.getGoods_id(),gVo.getGoods_name(),
+				    int row=this.executeUpdate(sql, gVo.getGoods_id(),gVo.getGoods_name(),
 					gVo.getGoods_state(),gVo.getGoods_category());
+				    if(row>0){
+				    	id=gVo.getGoods_id();
+				    }
 			} catch (SQLException e) {
 				throw new SQLException("添加失败");
 			}
 			this.close();
-			return row;
+			return id;
 		}
 		/**
 		 * 修改商品
@@ -75,14 +78,16 @@ public class GoodsDao extends Database {
 			return row;
 		}
 		/**
-		 * 查询商品状态
-		 *//*
-		public goodsInfoVo getGoodsState(String goods_id){
-			String sql="select*from goods_state where goods_id=?";
+		 * 查询单个商品
+		 */
+		public goodsInfoVo getGoodsDan(String goods_id){
+			String sql="select*from  goods_info_tb where goods_id=?";
 			List<goodsInfoVo> executeQuery=this.executeQuery(sql, fillData,goods_id);
 			for(goodsInfoVo vo:executeQuery){
+				this.close();
 				return vo;
 			}
+			this.close();
 			return null;
-		}*/
+		}
 }
