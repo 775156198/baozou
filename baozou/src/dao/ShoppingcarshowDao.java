@@ -11,7 +11,7 @@ import myinterface.FillData;
 import vo.ShoppingcarVo;
 import vo.ShoppingcardetailVo;
 
-public class ShoppingcarDao extends Database{
+public class ShoppingcarshowDao extends Database{
 	FillData<ShoppingcardetailVo> fillData = new FillData<ShoppingcardetailVo>(){
 		@Override
 		public ShoppingcardetailVo fillDate(Map<String, Object> map) {

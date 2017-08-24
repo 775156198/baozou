@@ -7,7 +7,7 @@ import database.Database;
 import myinterface.FillData;
 import vo.goodsinfodetailVo;
 
-public class GoodsDao extends Database{
+public class GoodsshowDao extends Database{
 	FillData<goodsinfodetailVo> fillData=new FillData<goodsinfodetailVo>(){
 
 		@Override
